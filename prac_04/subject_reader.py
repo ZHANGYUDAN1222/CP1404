@@ -13,7 +13,7 @@ def main():
 
 def get_data():
     """Read data from file formatted like: subject,lecturer,number of students."""
-    input_file = open(FILENAME)
+    input_file = open(FILENAME,"r")
     for line in input_file:
         print(line)  # See what a line looks like
         print(repr(line))  # See what a line really looks like
