@@ -19,7 +19,7 @@ def change_name(email_name):
     for k,v in email_name.items():
         answer=input('''Email:%s
 Is your name %s?(Y/N)'''%(k,v)).upper()
-        if answer=='Y' or answer=='':
+        if answer=='Y' or answer=='' or answer=='YES':
             pass
         else:
             name=input('Name:')
