@@ -38,6 +38,8 @@ class Taxi_P(Taxi, Car):
 prius1 = Taxi_P('Prius 1', 100, 1.23)
 """2. Drive the taxi 40km"""
 prius1.drive(40)
+"""3. Print the taxi's details and the current fare"""
+print(prius1.fuel, prius1.get_fare())
 
 
 
