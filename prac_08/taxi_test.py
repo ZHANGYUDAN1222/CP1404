@@ -36,6 +36,8 @@ class Taxi_P(Taxi, Car):
 
 """1. Create a new taxi with name "Prius 1", 100 units of fuel and price of $1.23/km"""
 prius1 = Taxi_P('Prius 1', 100, 1.23)
+"""2. Drive the taxi 40km"""
+prius1.drive(40)
 
 
 
