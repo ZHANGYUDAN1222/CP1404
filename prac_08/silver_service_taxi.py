@@ -17,3 +17,8 @@ class SilverServiceTaxi(Taxi):
         """Get price_per_km from Taxi"""
         self.price_per_km = Taxi.price_per_km
         self.finances = finances * self.price_per_km
+
+    def get_fare(self):
+        """Return the price for the taxi trip"""
+        return self.price_per_km * self.current_fare_distance
+
