@@ -20,8 +20,12 @@ class UnreliableCar(Car):
         or drive until fuel runs out return the distance actually driven.
         inherited from Car
         """
-        self.reliability = uniform(0, 100)
-        super().drive(distance)
+        reliability = uniform(0, 100)
+        """only drive the car if the random number is less than the car's reliability"""
+        if reliability > self.reliablity:
+            super().drive(distance)
+        else:
+            print("This car is below the reliability")
         return self.reliability, distance
 
     def __str__(self):
