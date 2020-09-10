@@ -8,9 +8,10 @@ from prac_08.taxi import Taxi
 class Taxi_P(Taxi, Car):
     """Specialised version of a Car and a Taxi that include fare costs"""
 
-    def __init__(self, name, fuel, price_per_km):
+    """Remove price_per_km"""
+    def __init__(self, name, fuel):
         """Initialise a Taxi instance, based on parent class Car"""
-        super().__init__(name, fuel, price_per_km)
+        super().__init__(name, fuel)
         self.current_fare_distance = 0
 
     def __str__(self):
@@ -35,7 +36,7 @@ class Taxi_P(Taxi, Car):
 
 
 """1. Create a new taxi with name "Prius 1", 100 units of fuel and price of $1.23/km"""
-prius1 = Taxi_P('Prius 1', 100, 1.23)
+prius1 = Taxi_P('Prius 1', 100)
 """2. Drive the taxi 40km"""
 prius1.drive(40)
 """3. Print the taxi's details and the current fare"""
