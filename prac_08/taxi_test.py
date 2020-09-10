@@ -8,9 +8,6 @@ from prac_08.taxi import Taxi
 class Taxi_P(Taxi, Car):
     """Specialised version of a Car and a Taxi that include fare costs"""
 
-    """Add class variable"""
-    price_per_km = 1.23
-
     def __init__(self, name, fuel, price_per_km):
         """Initialise a Taxi instance, based on parent class Car"""
         super().__init__(name, fuel, price_per_km)
