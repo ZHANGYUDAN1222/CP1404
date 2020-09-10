@@ -8,9 +8,9 @@ from prac_08.car import Car
 class UnreliableCar(Car):
     """Specialised version of a Car that includes fare costs"""
 
-    def __init__(self, reliability=0, **kwargs):
+    def __init__(self, reliability=0, name='', fuel=0):
         """Initialise a Taxi instance, based on parent class Car"""
-        super().__init__(**kwargs)
+        super().__init__(name, fuel)
         self.reliability = reliability
 
     def drive(self, distance):
@@ -22,7 +22,7 @@ class UnreliableCar(Car):
         """
         reliability = uniform(0, 100)
         """only drive the car if the random number is less than the car's reliability"""
-        if reliability > self.reliablity:
+        if reliability > self.reliability:
             super().drive(distance)
         else:
             print("This car is below the reliability")

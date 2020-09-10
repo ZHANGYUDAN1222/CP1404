@@ -9,9 +9,9 @@ def main():
     """set reliability to 23.55, name 'limo', fuel 100"""
     limo= UnreliableCar(23.55, 'limo', 100)
     """Drive 50km"""
-    limo.drive(50)
+    limo.drive(60)
     """Print detail"""
-    print(limo.fule)
-
+    print(limo.fuel)
+    print(limo)
 
 main()
