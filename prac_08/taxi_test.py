@@ -43,5 +43,6 @@ print(prius1.fuel, prius1.get_fare())
 """4. Restart the meter (start a new fare) and then drive the car 100km"""
 prius1.start_fare()
 prius1.drive(100)
-
+"""5. Print the details and the current fare"""
+print(prius1.fuel, prius1.get_fare())
 
