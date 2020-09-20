@@ -11,25 +11,59 @@ def main():
     print("Starting directory is: {}".format(os.getcwd()))
 
     # Change to desired directory
-    os.chdir('Lyrics/Christmas')
+    os.chdir('Lyrics')
+    for subdirectory in os.listdir('.'):
+        print(subdirectory)
+        if os.path.isdir(subdirectory):
+            os.chdir(subdirectory)
+            print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('.')))
+            for filename in os.listdir('.'):
+                # print(filename)
+                new_name= get_fix_name(filename)
+            os.chdir("..")
+        else:
+            print('{}, It is not a directory'.format(subdirectory))
 
-    # Print a list of all files in current directory
-    print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('.')))
+def get_fix_name(filename):
+    pernalist = filename.split()
+    capital_name = ''
+    for i in pernalist:
+        i = i[0].upper() + i[1:]
+        capital_name += i
+    dash_name = capital_name[:-4]
+    new_name = ''
+    for i, char in enumerate(dash_name):
+        if dash_name[i-1] == '(':
+            char = char.upper()
+        elif char.isupper():
+            char = "_" + char
+        else:
+            char = char
+        new_name += char
+    new_name = new_name[1:] + '.txt'
+    print(new_name)
+
+        
+
+
+    # for file in filename:
+
+
 
     # Loop through each file in the (current) directory
-    for filename in os.listdir('.'):
-        # Ignore directories, just process files
-        if os.path.isdir(filename):
-            continue
+    #     for filename in os.listdir('.'):
+    #         Ignore directories, just process files
+    #         if os.path.isdir(filename):
+    #             continue
 
-        new_name = get_fixed_filename(filename)
-        print("Renaming {} to {}".format(filename, new_name))
+        # new_name = get_fixed_filename(filename)
+        # print("Renaming {} to {}".format(filename, new_name))
 
 
-def get_fixed_filename(filename):
+# def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    return new_name
+    # new_name = ""
+    # print(filename.split())
 
 
 def demo_walk():
