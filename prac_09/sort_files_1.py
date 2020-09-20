@@ -5,6 +5,7 @@ Create new directories and Sort extensions
 import shutil
 import os
 
+
 def main():
     """Get current working directory"""
     print("Starting directory is: {}".format(os.getcwd()))
@@ -27,16 +28,18 @@ def main():
     """Move files"""
     move_file(all_type)
 
-def sort_files(filename,all_type):
+
+def sort_files(filename, all_type):
     """Function to sort and append files according to there type"""
     # create a list , split by '.'
     split_name = filename.split('.')
-    for k,v in all_type.items():
+    for k, v in all_type.items():
         if split_name[1] == k:
             v.append(filename)
         else:
             continue
     return all_type
+
 
 def move_file(all_type):
     """Move corresponding type of file to corresponding directory"""
@@ -61,4 +64,6 @@ def move_file(all_type):
                 shutil.move(src, dest)
             os.chdir('..')
 
-main()
+
+if __name__ == '__main__':
+    main()
