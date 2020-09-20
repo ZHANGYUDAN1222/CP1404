@@ -24,6 +24,9 @@ def main():
     # test if all_type returns correctly
     # print(all_type)
 
+    """Move files"""
+    move_file(all_type)
+
 def sort_files(filename,all_type):
     """Function to sort and append files according to there type"""
     # create a list , split by '.'
@@ -35,5 +38,27 @@ def sort_files(filename,all_type):
             continue
     return all_type
 
+def move_file(all_type):
+    """Move corresponding type of file to corresponding directory"""
+    start = os.getcwd()
+    for k, v in all_type.items():
+        """Create new directory and change path to the new directory"""
+        try:
+            if os.path.exists(os.path.join(start, k)):
+                raise IndexError
+            else:
+                os.mkdir(k)
+        except IndexError:
+            os.chdir(k)
+            dest = os.getcwd()
+            # test destintion path
+            print(dest)
+            for i in v:
+                """Find the source path of each file"""
+                src = os.path.join(start, i)
+                # test the path
+                print(src)
+                shutil.move(src, dest)
+            os.chdir('..')
 
 main()
