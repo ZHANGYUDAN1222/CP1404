@@ -13,13 +13,18 @@ def main():
     # Change to desired directory
     os.chdir('Lyrics')
     for subdirectory in os.listdir('.'):
-        print(subdirectory)
+        """Select all the subdirectories in lyrics"""
+        # print(subdirectory)
+        """Change path to each subdirectory"""
+
         if os.path.isdir(subdirectory):
+            """Print the working directory and change the name of the file"""
             os.chdir(subdirectory)
-            print("Files in {}:\n{}\n".format(os.getcwd(), os.listdir('.')))
+            print("Files in {}:".format(os.getcwd()))
             for filename in os.listdir('.'):
-                # print(filename)
                 new_name= get_fix_name(filename)
+                os.rename(filename, new_name)
+            print(os.listdir())
             os.chdir("..")
         else:
             print('{}, It is not a directory'.format(subdirectory))
