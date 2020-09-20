@@ -49,24 +49,6 @@ def get_fix_name(filename):
     new_name = new_name[1:] + '.txt'
     return new_name
 
-        
-
-
-    # for file in filename:
-
-
-
-    # Loop through each file in the (current) directory
-    #     for filename in os.listdir('.'):
-    #         Ignore directories, just process files
-    #         if os.path.isdir(filename):
-    #             continue
-
-        # new_name = get_fixed_filename(filename)
-        # print("Renaming {} to {}".format(filename, new_name))
-
-
-
 def demo_walk():
     """Process all subdirectories using os.walk()."""
     os.chdir('Lyrics')
