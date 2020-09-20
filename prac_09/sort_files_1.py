@@ -6,6 +6,11 @@ Create new directories and Sort extensions
 import os
 
 def main():
+    """Get current working directory"""
+    print("Starting directory is: {}".format(os.getcwd()))
+    """Change path to directory FilesToSort"""
+    os.chdir('FilesToSort')
+    """Create lists to sort different files"""
     txt = []
     doc = []
     docx = []
@@ -14,15 +19,15 @@ def main():
     png = []
     gif = []
     jpg = []
-    """Get current working directory"""
-    print("Starting directory is: {}".format(os.getcwd()))
-    """Change path to directory FilesToSort"""
-    os.chdir('FilesToSort')
+    """Sort different files in corresponding list"""
     for filename in os.listdir('.'):
         txt, doc, docx, xls, xlsx, png, gif, jpg = sort_files(filename,txt, doc, docx, xls, xlsx, png, gif, jpg)
-    print(txt, doc, docx, xls, xlsx, png, gif, jpg)
+    # Test if the file in the right list
+    # print(txt, doc, docx, xls, xlsx, png, gif, jpg)
 
 def sort_files(filename,txt, doc, docx, xls, xlsx, png, gif, jpg):
+    """Function to sort and append files according to there type"""
+    # create a list , split by '.'
     split_name = filename.split('.')
     if split_name[1] == 'txt':
         txt.append(filename)
