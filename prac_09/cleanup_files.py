@@ -42,7 +42,7 @@ def get_fix_name(filename):
             char = char
         new_name += char
     new_name = new_name[1:] + '.txt'
-    print(new_name)
+    return new_name
 
         
 
