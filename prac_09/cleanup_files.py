@@ -25,6 +25,7 @@ def main():
             print('{}, It is not a directory'.format(subdirectory))
 
 def get_fix_name(filename):
+    """Return a 'fixed' version of filename."""
     pernalist = filename.split()
     capital_name = ''
     for i in pernalist:
@@ -59,11 +60,6 @@ def get_fix_name(filename):
         # new_name = get_fixed_filename(filename)
         # print("Renaming {} to {}".format(filename, new_name))
 
-
-# def get_fixed_filename(filename):
-    """Return a 'fixed' version of filename."""
-    # new_name = ""
-    # print(filename.split())
 
 
 def demo_walk():
