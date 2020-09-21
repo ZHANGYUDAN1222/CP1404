@@ -51,18 +51,22 @@ def move_file(all_type):
                 raise IndexError
             else:
                 os.mkdir(k)
+                os.chdir(k)
+                dest = os.getcwd()
+                # test destination path
+                # print(dest)
+                for i in v:
+                    """Find the source path of each file"""
+                    src = os.path.join(start, i)
+                    # test the path
+                    print('From:',src)
+                    print('To:',dest)
+                    shutil.move(src, dest)
+                    print('{} successfully moved!'.format(os.path.basename(src)))
+                os.chdir('..')
+                os.getcwd()
         except IndexError:
-            os.chdir(k)
-            dest = os.getcwd()
-            # test destintion path
-            print(dest)
-            for i in v:
-                """Find the source path of each file"""
-                src = os.path.join(start, i)
-                # test the path
-                print(src)
-                shutil.move(src, dest)
-            os.chdir('..')
+            print('IndexError, It may because current working directory has no files to move.')
 
 
 if __name__ == '__main__':
